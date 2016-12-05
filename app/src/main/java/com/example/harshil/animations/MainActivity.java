@@ -17,21 +17,54 @@ public class MainActivity extends AppCompatActivity {
         Button rotate=(Button)findViewById(R.id.rotation);
         Button size=(Button)findViewById(R.id.size);
         Button move=(Button)findViewById(R.id.move);
-
+        Button all=(Button)findViewById(R.id.all);
         View.OnClickListener onClickListener=new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                switch (view.getId()){
-                    case R.id.faded: if(f==1){f=0;bart.animate().alpha(0f).setDuration(2000);}else{f=1;bart.animate().alpha(1f).setDuration(2000);}break;
-                    case R.id.rotation: if(r==1){r=0;bart.animate().rotation(1800f).setDuration(2000);}else{r=1;bart.animate().rotation(-1800f).setDuration(2000);}break;
-                    case R.id.size: if(s==1){s=0;bart.animate().scaleX(0.5f).scaleY(0.5f).setDuration(2000);}else{s=1;bart.animate().scaleX(1f).scaleY(1f).setDuration(2000);}break;
-                    case R.id.move: if(m==1){m=0;bart.animate().translationXBy(1500f).setDuration(2000);}else{m=1;bart.animate().translationXBy(-1500f).setDuration(2000);}break;}
-            }
+                switch (view.getId()) {
+                    case R.id.faded:
+                        if (f == 1) {
+                            f = 0;
+                            bart.animate().alpha(0f).setDuration(2000);
+                        } else {
+                            f = 1;
+                            bart.animate().alpha(1f).setDuration(2000);
+                        }
+                        break;
+                    case R.id.rotation:
+                        if (r == 1) {
+                            r = 0;
+                            bart.animate().rotation(1800f).setDuration(2000);
+                        } else {
+                            r = 1;
+                            bart.animate().rotation(-1800f).setDuration(2000);
+                        }
+                        break;
+                    case R.id.size:
+                        if (s == 1) {
+                            s = 0;
+                            bart.animate().scaleX(0.5f).scaleY(0.5f).setDuration(2000);
+                        } else {
+                            s = 1;
+                            bart.animate().scaleX(1f).scaleY(1f).setDuration(2000);
+                        }
+                        break;
+                    case R.id.move:
+                        if (m == 1) {
+                            m = 0;
+                            bart.animate().translationXBy(1500f).setDuration(2000);
+                        } else {
+                            m = 1;
+                            bart.animate().translationXBy(-1500f).setDuration(2000);
+                        }
+                        break;
+                    case R.id.all: bart.animate().rotation(5000f).scaleX(0.5f).scaleY(0.5f).translationXBy(150f).translationYBy(150f).translationXBy(-150f).translationYBy(-150f).scaleX(1f).scaleY(1f).rotation(-500f).alpha(0f).alpha(1f).setDuration(10000);break;
+                }}
         };
         faded.setOnClickListener(onClickListener);
         rotate.setOnClickListener(onClickListener);
         size.setOnClickListener(onClickListener);
         move.setOnClickListener(onClickListener);
-
+        all.setOnClickListener(onClickListener);
     }
 }
